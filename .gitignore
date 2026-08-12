@@ -1,0 +1,10 @@
+# Dados — baixados automaticamente pelo notebook, não versionar
+data/
+
+# Jupyter
+.ipynb_checkpoints/
+__pycache__/
+
+# Ambiente
+.venv/
+.env

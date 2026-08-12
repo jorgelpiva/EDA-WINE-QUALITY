@@ -1,0 +1,18 @@
+# jlp.mplstyle — paleta JLP Sistemas
+figure.facecolor: FAF6EF
+axes.facecolor: FAF6EF
+axes.edgecolor: 6B5D4F
+axes.labelcolor: 2A231C
+axes.titlecolor: 2A231C
+text.color: 2A231C
+xtick.color: 6B5D4F
+ytick.color: 6B5D4F
+grid.color: E6DCC9
+axes.grid: True
+grid.alpha: 0.6
+font.family: sans-serif
+axes.prop_cycle: cycler('color', ['2C4A5E', 'B08D3C', '6B5D4F', '7A9A8B', '9C6B3C', '4A6B7C'])
+figure.dpi: 120
+savefig.dpi: 150
+savefig.bbox: tight
+savefig.facecolor: FAF6EF
