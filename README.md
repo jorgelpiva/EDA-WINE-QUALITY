@@ -31,12 +31,12 @@ jupyter notebook notebooks/eda-wine-quality.ipynb
 2. **Álcool é o preditor mais forte de qualidade — mas é uma relação moderada, não perfeita.** A correlação de Pearson mede o quanto duas variáveis andam juntas, numa escala de -1 (uma sobe enquanto a outra desce) a 1 (sobem sempre juntas); perto de 0, não há relação. O álcool tem 0,44 com `quality`, a correlação mais forte com a nota — um sinal claro, mas nenhuma variável sozinha explica a nota. Vinhos com nota ≥ 7 têm teor alcoólico médio de 11,43%, contra 10,26% dos demais.
 
    ![Boxplots de álcool e outras variáveis por nota de qualidade](images/alcohol-vs-qualidade.png)
-   *Álcool sobe junto com a nota do vinho (primeiro gráfico) — um padrão visível mesmo com a dispersão natural dos dados.*
+   *A relação não é uma reta: a mediana de álcool cai até a nota 5 e só depois sobe — um padrão em U que a correlação de Pearson, por medir só relação linear, não captura por completo.*
 
-3. **Densidade e acidez volátil puxam a nota para baixo — e isso não é "ruim", é só direção oposta.** Correlações de -0,31 e -0,27 com `quality`: quando essas variáveis sobem, a nota tende a cair. Densidade mais baixa está fisicamente ligada a mais álcool (correlação de -0,69 entre as duas, a mais forte do dataset), o que ajuda a explicar o padrão.
+3. **Densidade e acidez volátil puxam a nota para baixo — e isso não é "ruim", é só direção oposta.** Correlações de -0,31 e -0,27 com `quality`: quando essas variáveis sobem, a nota tende a cair. Densidade mais baixa está fisicamente ligada a mais álcool (correlação de -0,69 entre as duas, a mais forte envolvendo álcool no dataset), o que ajuda a explicar o padrão.
 
    ![Mapa de calor de correlação entre as variáveis do dataset](images/heatmap-correlacao.png)
-   *Quanto mais escura a célula, mais as duas variáveis sobem juntas; quanto mais clara, mais uma sobe enquanto a outra desce.*
+   *Dourado indica que as duas variáveis sobem juntas; petróleo, que uma sobe enquanto a outra desce; bege, perto do centro, indica pouca ou nenhuma relação.*
 
 4. **Outlier não é sinônimo de erro.** Um outlier é um valor bem distante da maioria — mas não necessariamente um erro de medição. Valores extremos em `residual sugar` (açúcar residual), `chlorides` (cloretos) e nas variáveis de dióxido de enxofre provavelmente refletem estilos legítimos de vinho (vinhos doces, escolhas de conservação do produtor). Remover automaticamente esses pontos descartaria informação real sem justificativa técnica.
 5. **Tinto e branco têm perfis químicos distintos.** O branco tem muito mais SO2 (dióxido de enxofre, usado para proteger o vinho da oxidação) — tanto livre quanto total — e mais açúcar residual; o tinto tem mais acidez volátil (associada a defeito de sabor, tipo gosto de vinagre, quando em excesso). Essa diferença sistemática é forte o suficiente para justificar usar o tipo do vinho como variável em um modelo.
